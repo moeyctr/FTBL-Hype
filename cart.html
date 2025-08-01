@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cart – FTBL Hype</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">FTBL Hype</div>
+    <ul class="nav-right">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="boots.html">Boots</a></li>
+      <li><a href="kits.html">Kits</a></li>
+      <li><a href="balls.html">Balls</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cart.html">Cart</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <p id="total"></p>
+    <a href="checkout.html"><button>Proceed to Checkout</button></a>
+  </main>
+
+  <script>
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartList = document.getElementById("cart-items");
+    let total = 0;
+
+    cartItems.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = `${item.name} – $${item.price}`;
+      cartList.appendChild(li);
+      total += item.price;
+    });
+
+    document.getElementById("total").textContent = `Total: $${total}`;
+  </script>
+</body>
+</html>
