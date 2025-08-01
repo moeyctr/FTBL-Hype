@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Boots – FTBL Hype</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">FTBL Hype</div>
+    <ul class="nav-right">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="boots.html">Boots</a></li>
+      <li><a href="kits.html">Kits</a></li>
+      <li><a href="balls.html">Balls</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cart.html">Cart</a></li>
+    </ul>
+  </nav>
+
+  <main class="product-grid">
+
+    <div class="product-card">
+      <img src="https://www.ultrafootball.com/cdn/shop/products/015110_1_800x.jpg" alt="Copa Mundial">
+      <h3>Copa Mundial FG</h3>
+      <p>$200</p>
+      <button onclick="addToCart('Copa Mundial FG', 200)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://www.ultrafootball.com/cdn/shop/files/F50_FG_Radiant_Blaze_JS3211_1_800x.jpg" alt="F50 FG Radiant Blaze">
+      <h3>F50 FG Radiant Blaze</h3>
+      <p>$320</p>
+      <button onclick="addToCart('F50 FG Radiant Blaze', 320)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://www.ultrafootball.com/cdn/shop/files/Copa_Pure_3_Elite_Laceless_FG_JH6302_1_800x.jpg" alt="Copa Pure 3 Elite">
+      <h3>Copa Pure 3 Elite FG</h3>
+      <p>$270</p>
+      <button onclick="addToCart('Copa Pure 3 Elite FG', 270)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://www.ultrafootball.com/cdn/shop/files/Zoom_Mercurial_Vapor_16_Elite_Vini_Jr_IB2356_1_800x.jpg" alt="Mercurial Vapor Vini Jr">
+      <h3>Zoom Mercurial Vapor 16 Vini Jr</h3>
+      <p>$340</p>
+      <button onclick="addToCart('Zoom Mercurial Vini Jr', 340)">Add to Cart</button>
+    </div>
+
+  </main>
+
+  <script>
+    function addToCart(name, price) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ name, price });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${name} added to cart!`);
+    }
+  </script>
+</body>
+</html>
