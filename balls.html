@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Balls – FTBL Hype</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">FTBL Hype</div>
+    <ul class="nav-right">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="boots.html">Boots</a></li>
+      <li><a href="kits.html">Kits</a></li>
+      <li><a href="balls.html">Balls</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cart.html">Cart</a></li>
+    </ul>
+  </nav>
+
+  <main class="product-grid">
+
+    <div class="product-card">
+      <img src="https://www.ultrafootball.com/cdn/shop/files/PremierLeagueFlightBallFZ3033_800x.jpg" alt="Premier League Ball">
+      <h3>Premier League Flight Ball</h3>
+      <p>$250</p>
+      <button onclick="addToCart('Premier League Flight Ball', 250)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://www.ultrafootball.com/cdn/shop/files/Context25ProBallJH1273_1_800x.jpg" alt="Context 25 Pro">
+      <h3>Context 25 Pro Ball</h3>
+      <p>$180</p>
+      <button onclick="addToCart('Context 25 Pro Ball', 180)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://www.ultrafootball.com/cdn/shop/files/UWCLBallIS7437_800x.jpg" alt="UWCL Pro Ball">
+      <h3>UWCL Pro 24/25 Ball</h3>
+      <p>$220</p>
+      <button onclick="addToCart('UWCL Pro 24/25 Ball', 220)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://www.ultrafootball.com/cdn/shop/files/A_LeaguesFinalsBall_800x.jpg" alt="A-Leagues Finals Ball">
+      <h3>A-Leagues Ultimax Pro</h3>
+      <p>$210</p>
+      <button onclick="addToCart('A-Leagues Ultimax Pro', 210)">Add to Cart</button>
+    </div>
+
+  </main>
+
+  <script>
+    function addToCart(name, price) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ name, price });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${name} added to cart!`);
+    }
+  </script>
+</body>
+</html>
