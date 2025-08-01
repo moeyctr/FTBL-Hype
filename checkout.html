@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Checkout – FTBL Hype</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">FTBL Hype</div>
+    <ul class="nav-right">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="boots.html">Boots</a></li>
+      <li><a href="kits.html">Kits</a></li>
+      <li><a href="balls.html">Balls</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cart.html">Cart</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Checkout</h2>
+    <form onsubmit="submitOrder(event)">
+      <label>Name:<input type="text" required></label><br>
+      <label>Address:<input type="text" required></label><br>
+      <label>Card Number:<input type="text" required maxlength="16"></label><br>
+      <label>Expiry Date:<input type="month" required></label><br>
+      <label>CVV:<input type="text" maxlength="3" required></label><br>
+      <button type="submit">Place Order</button>
+    </form>
+  </main>
+
+  <script>
+    function submitOrder(e) {
+      e.preventDefault();
+      localStorage.removeItem("cart");
+      alert("Thank you for your order!");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
